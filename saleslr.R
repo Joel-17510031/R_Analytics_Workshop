@@ -68,6 +68,7 @@ qt(0.95+.025, 14-2)
 
 #Assumption : Graphical Analysis
 plot(x=X, y=residuals(fit1)) # Linearity
+abline(h=0)
 plot(residuals(fit1))
 car::durbinWatsonTest(fit1)
 
@@ -102,7 +103,7 @@ residuals(fit1)
 boxplot( df1$Y, df1$predict, residuals(fit1), names=c('Y','predictY', 'Residuals'))
 abline(h=c(4.1, 5.97, -1.87))
 boxplot(residuals(fit1), names=c('Residuals'))
-identify(rep(1, length(residuals(fit1))), residuals(fit1), labels = seq_along(residuals(fit1)))
+#identify(rep(1, length(residuals(fit1))), residuals(fit1), labels = seq_along(residuals(fit1)))
 
 car::outlierTest(fit1)
 df1[14,]
