@@ -23,12 +23,19 @@ names(v8)<- c("anish","shlok", "jaimin", "bhavya", "nihali")
 v8["anish"]
 v8[2:4]
 
-#datafream ----
-df=data.frame(rollno=c(1,2,3),name=c("Rohit","Lalit","Hitesh"),course=c("MBA","BBA","MCA"),dept=c("Dept1","Dept1","Dept2"),marks=floor(runif(3,50,100)))
+#dataframe ----
+df<- data.frame(rollno=c(1,2,3),name=c("Rohit","Lalit","Hitesh"),course=c("MBA","BBA","MCA"),dept=c("Dept1","Dept1","Dept2"),marks=floor(runif(3,50,100)))
 df
-df=fix(df)
+#df=fix(df)
 df
 str(df)
 class(df)
 summary(df)
+
+ls()
+df$gender <- c("M","M","F")
+df$gender<- factor(df$gender)
+df
+str(df)
+tapply(df$marks, df$gender, mean)
 
