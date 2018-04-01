@@ -55,9 +55,9 @@ summary(object = Mer_SalesTestUncapped)
 
 
 ########################### Modeling #################################
-
 head(Mer_SalesTrainUncapped)
 # Build a full model with default settings
+mean()
 set.seed(123) # To ensure reproducibility of xerrors (cross validated errors while estimating complexity paramter for tree pruning)
 CartFullModel = rpart(formula = Annual_Sales ~ . , data = Mer_SalesTrainUncapped[,-1], method = "anova")
 CartFullModel
